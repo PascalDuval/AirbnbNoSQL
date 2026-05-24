@@ -15,3 +15,6 @@ Desktop.ini
 # Mongo logs and local runtime dirs if recreated locally
 mongodb/
 *.log
+
+# Entire archive / non-essential docs folder
+docus/

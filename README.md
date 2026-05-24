@@ -2,6 +2,8 @@
 
 Ce depot contient la mise en place d'une base NoSQL MongoDB pour des donnees Airbnb (Paris/Lyon), avec scripts PowerShell pour replica set, cluster sharde et verification.
 
+Depot GitHub: https://github.com/PascalDuval/AirbnbNoSQL
+
 ## 1) Structure du projet
 
 ```
@@ -22,18 +24,54 @@ Le document de perimetre est dans:
 
 - `documentation/Duval_Pascal_presentation2_projet7-NoSQL_26122025.pdf`
 
-## 2) Prerequis techniques
+## 2) Cloner le projet
+
+```powershell
+git clone https://github.com/PascalDuval/AirbnbNoSQL.git
+Set-Location .\AirbnbNoSQL
+```
+
+Verifier l'etat:
+
+```powershell
+git status -sb
+```
+
+## 3) Prerequis techniques
 
 1. Windows 10/11
-2. MongoDB Server 8.0 installe
-3. mongosh installe
+2. MongoDB Community Server (Desktop Windows) installe
+3. MongoDB Compass (Desktop) installe
+4. mongosh installe
 4. PowerShell autorise a executer les scripts
 
 Voir le guide detaille:
 
 - `documentation/MONGODB_WINDOWS_INSTALLATION.md`
 
-## 3) Scripts PowerShell (ordre conseille)
+## 4) Configurer Jupyter / noyau Python
+
+Interpreteur recommande pour ce projet:
+
+- `C:/Users/karap/anaconda3/envs/LLMRag/python.exe`
+
+Dans VS Code:
+
+1. Ouvrir un notebook dans `notebooks/`.
+2. Selectionner le kernel `LLMRag` (ou l'interpreteur ci-dessus).
+3. Installer les paquets avec `%pip` dans le notebook (eviter `!pip`).
+
+Exemple dans une cellule notebook:
+
+```python
+%pip install pandas pymongo polars matplotlib
+```
+
+Guide pas a pas:
+
+- `documentation/JUPYTER_KERNEL_SETUP.md`
+
+## 5) Scripts PowerShell (ordre conseille)
 
 Les scripts sont numerotes pour un enchainement sequentiel clair.
 
@@ -52,7 +90,7 @@ Guide complet d'execution et role de chaque script:
 
 - `documentation/SCRIPTS_PS1_GUIDE.md`
 
-## 4) Commandes d'execution
+## 6) Commandes d'execution
 
 Depuis la racine du projet:
 
@@ -76,31 +114,27 @@ Puis dans `mongosh` (connecte sur port 27000):
 load("./scripts/mongo/05_shard-move-chunks.js")
 ```
 
-## 5) Donnees
+## 7) Donnees
 
 - Sources: `data/raw`
 - Exports MongoDB: `data/exports`
 - Schema/pipeline: `data/schemas`
+- Archives/inutiles non versionnees: `docus/`
 
-## 6) Notes importantes
+## 8) Notes importantes
 
 1. Un doublon du PDF de perimetre peut rester a la racine si le fichier est ouvert/verrouille par Windows. Fermer le PDF puis supprimer la copie racine.
 2. Les scripts utilisent des chemins absolus locaux (ex: `C:\Program Files\MongoDB\Server\8.0\bin`). Adapter ces chemins si necessaire.
 3. Les ports utilises sont principalement 27000, 27017, 27018, 27019, 26001, 26002, 26003.
 
-## 7) GitHub
+## 9) GitHub
 
-Depot distant cible:
-
-- `https://github.com/PascalDuval/AirbnbNoSQL`
-
-Commandes standard:
+Push standard (deja configure localement):
 
 ```powershell
-git init
 git add .
-git commit -m "Reorganisation complete projet NoSQL + documentation"
-git branch -M main
-git remote add origin https://github.com/PascalDuval/AirbnbNoSQL.git
+git commit -m "Message explicite"
 git push -u origin main
 ```
+
+Important: les gros fichiers de `data/` passent par Git LFS.
