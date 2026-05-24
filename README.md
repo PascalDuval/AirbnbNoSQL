@@ -4,7 +4,27 @@ Ce dépôt contient la mise en place d'une base NoSQL MongoDB pour des données 
 
 Dépôt GitHub : https://github.com/PascalDuval/AirbnbNoSQL
 
-## 1) Structure du dépôt
+## 1) Périmètre du projet
+
+Cette étude vise à analyser l'offre de logements Airbnb à Paris dans la perspective d'un rapport sur l'effet des Jeux Olympiques 2024 sur le marché du logement.
+
+Le périmètre fonctionnel couvre :
+
+1. La restauration d'une base NoSQL MongoDB à partir de données Airbnb (CSV/JSON), puis l'inspection des documents.
+2. L'analyse de la structure des données (schéma flexible, types hétérogènes, qualité des champs).
+3. La production de requêtes analytiques métier pour mesurer :
+  - la disponibilité et les types de logements,
+  - la part de locations entières,
+  - les hôtes multi-annonces et super-hôtes,
+  - la distribution géographique des annonces.
+4. La justification du choix MongoDB/NoSQL pour des données semi-structurées et évolutives issues de scraping.
+5. Les aspects d'exploitation: sauvegarde/restauration, supervision, et contrôle d'accès.
+
+Référence du périmètre :
+
+- `documentation/Duval_Pascal_presentation2_projet7-NoSQL_26122025.pdf`
+
+## 2) Structure du dépôt
 
 ```
 data/
@@ -24,7 +44,7 @@ Le document de périmètre est dans :
 
 - `documentation/Duval_Pascal_presentation2_projet7-NoSQL_26122025.pdf`
 
-## 2) Cloner le dépôt
+## 3) Cloner le dépôt
 
 ```powershell
 git clone https://github.com/PascalDuval/AirbnbNoSQL.git
@@ -37,7 +57,7 @@ Vérifier l'état :
 git status -sb
 ```
 
-## 3) Prérequis techniques
+## 4) Prérequis techniques
 
 1. Windows 10/11
 2. MongoDB Community Server (Desktop Windows) installé
@@ -49,7 +69,7 @@ Voir le guide détaillé :
 
 - `documentation/MONGODB_WINDOWS_INSTALLATION.md`
 
-## 4) Configurer Jupyter / noyau Python
+## 5) Configurer Jupyter / noyau Python
 
 Interpréteur recommandé :
 
@@ -71,7 +91,7 @@ Guide pas à pas :
 
 - `documentation/JUPYTER_KERNEL_SETUP.md`
 
-## 5) Scripts PowerShell (ordre conseillé)
+## 6) Scripts PowerShell (ordre conseillé)
 
 Les scripts sont numérotés pour un enchaînement séquentiel clair.
 
@@ -90,7 +110,7 @@ Guide complet d'exécution et rôle de chaque script :
 
 - `documentation/SCRIPTS_PS1_GUIDE.md`
 
-## 6) Commandes d'exécution
+## 7) Commandes d'exécution
 
 Depuis la racine du dépôt :
 
@@ -114,19 +134,19 @@ Puis dans `mongosh` (connecté sur port 27000) :
 load("./scripts/mongo/05_shard-move-chunks.js")
 ```
 
-## 7) Données
+## 8) Données
 
 - Sources: `data/raw`
 - Exports MongoDB: `data/exports`
 - Schéma/pipeline : `data/schemas`
 - Archives/inutiles non versionnées : `docus/`
 
-## 8) Notes importantes
+## 9) Notes importantes
 
 1. Les scripts utilisent des chemins absolus locaux (ex : `C:\Program Files\MongoDB\Server\8.0\bin`). Adapter ces chemins si nécessaire.
 2. Les ports utilisés sont principalement 27000, 27017, 27018, 27019, 26001, 26002, 26003.
 
-## 9) GitHub
+## 10) GitHub
 
 Push standard (déjà configuré localement) :
 
