@@ -6,7 +6,7 @@ Executer les notebooks du projet avec le bon environnement Python.
 
 Interpreteur cible:
 
-- `C:/Users/karap/anaconda3/envs/LLMRag/python.exe`
+- `C:/chemin/vers/envs/projet-python/python.exe`
 
 ## 1) Ouvrir un notebook
 
@@ -15,9 +15,9 @@ Interpreteur cible:
 
 ## 2) Selectionner le bon kernel
 
-1. Choisir l'environnement `LLMRag`.
+1. Choisir l'environnement `projet-python`.
 2. Si absent, choisir "Select Another Kernel" puis pointer vers:
-   - `C:/Users/karap/anaconda3/envs/LLMRag/python.exe`
+   - `C:/chemin/vers/envs/projet-python/python.exe`
 
 ## 3) Installer les dependances dans le notebook
 
@@ -43,10 +43,10 @@ print(pymongo.__version__)
 print(pl.__version__)
 ```
 
-Le chemin de `sys.executable` doit pointer vers l'environnement `LLMRag`.
+Le chemin de `sys.executable` doit pointer vers l'environnement `projet-python`.
 
 ## 5) Conseils de depannage
 
 1. Si un package est introuvable, reexecuter `%pip install ...` puis redemarrer le kernel.
-2. Si VS Code propose plusieurs interpreteurs, re-selectionner explicitement `LLMRag`.
+2. Si VS Code propose plusieurs interpreteurs, re-selectionner explicitement `projet-python`.
 3. Eviter `!pip` dans notebook pour garder un environnement coherent.
