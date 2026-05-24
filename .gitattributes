@@ -1,3 +1,6 @@
+data/raw/*.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/*.json filter=lfs diff=lfs merge=lfs -text
+data/exports/*.csv filter=lfs diff=lfs merge=lfs -text
 data/raw/listings_Paris.csv filter=lfs diff=lfs merge=lfs -text
 data/raw/airbnb.logements-paris.json filter=lfs diff=lfs merge=lfs -text
 data/exports/airbnb.logements-paris-frommongoDB.csv filter=lfs diff=lfs merge=lfs -text
