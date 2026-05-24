@@ -1,0 +1,17 @@
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary lock files
+.~lock.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Mongo logs and local runtime dirs if recreated locally
+mongodb/
+*.log

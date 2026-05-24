@@ -1,0 +1,293 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "_id",
+      "accommodates",
+      "amenities",
+      "availability_30",
+      "availability_365",
+      "availability_60",
+      "availability_90",
+      "calculated_host_listings_count",
+      "calculated_host_listings_count_entire_homes",
+      "calculated_host_listings_count_private_rooms",
+      "calculated_host_listings_count_shared_rooms",
+      "calendar_last_scraped",
+      "host_acceptance_rate",
+      "host_has_profile_pic",
+      "host_id",
+      "host_identity_verified",
+      "host_listings_count",
+      "host_name",
+      "host_picture_url",
+      "host_response_rate",
+      "host_response_time",
+      "host_since",
+      "host_thumbnail_url",
+      "host_total_listings_count",
+      "host_url",
+      "host_verifications",
+      "id",
+      "instant_bookable",
+      "last_scraped",
+      "latitude",
+      "listing_url",
+      "longitude",
+      "maximum_maximum_nights",
+      "maximum_minimum_nights",
+      "maximum_nights",
+      "maximum_nights_avg_ntm",
+      "minimum_maximum_nights",
+      "minimum_minimum_nights",
+      "minimum_nights",
+      "minimum_nights_avg_ntm",
+      "name",
+      "neighbourhood_cleansed",
+      "number_of_reviews",
+      "number_of_reviews_l30d",
+      "number_of_reviews_ltm",
+      "picture_url",
+      "property_type",
+      "room_type",
+      "scrape_id",
+      "source"
+    ],
+    "properties": {
+      "_id": {
+        "bsonType": "objectId"
+      },
+      "accommodates": {
+        "bsonType": "int"
+      },
+      "amenities": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "string"
+        }
+      },
+      "availability_30": {
+        "bsonType": "int"
+      },
+      "availability_365": {
+        "bsonType": "int"
+      },
+      "availability_60": {
+        "bsonType": "int"
+      },
+      "availability_90": {
+        "bsonType": "int"
+      },
+      "bathrooms": {
+        "bsonType": "double"
+      },
+      "bathrooms_text": {
+        "bsonType": "string"
+      },
+      "bedrooms": {
+        "bsonType": "int"
+      },
+      "beds": {
+        "bsonType": "int"
+      },
+      "calculated_host_listings_count": {
+        "bsonType": "int"
+      },
+      "calculated_host_listings_count_entire_homes": {
+        "bsonType": "int"
+      },
+      "calculated_host_listings_count_private_rooms": {
+        "bsonType": "int"
+      },
+      "calculated_host_listings_count_shared_rooms": {
+        "bsonType": "int"
+      },
+      "calendar_last_scraped": {
+        "bsonType": "date"
+      },
+      "description": {
+        "bsonType": "string"
+      },
+      "first_review": {
+        "bsonType": "date"
+      },
+      "has_availability": {
+        "bsonType": "bool"
+      },
+      "host_about": {
+        "bsonType": "string"
+      },
+      "host_acceptance_rate": {
+        "bsonType": "string"
+      },
+      "host_has_profile_pic": {
+        "bsonType": "bool"
+      },
+      "host_id": {
+        "bsonType": "int"
+      },
+      "host_identity_verified": {
+        "bsonType": "bool"
+      },
+      "host_is_superhost": {
+        "bsonType": "bool"
+      },
+      "host_listings_count": {
+        "bsonType": "int"
+      },
+      "host_location": {
+        "bsonType": "string"
+      },
+      "host_name": {
+        "bsonType": "string"
+      },
+      "host_neighbourhood": {
+        "bsonType": "string"
+      },
+      "host_picture_url": {
+        "bsonType": "string"
+      },
+      "host_response_rate": {
+        "bsonType": "string"
+      },
+      "host_response_time": {
+        "bsonType": "string"
+      },
+      "host_since": {
+        "bsonType": "date"
+      },
+      "host_thumbnail_url": {
+        "bsonType": "string"
+      },
+      "host_total_listings_count": {
+        "bsonType": "int"
+      },
+      "host_url": {
+        "bsonType": "string"
+      },
+      "host_verifications": {
+        "bsonType": [
+          "string",
+          "array"
+        ]
+      },
+      "id": {
+        "bsonType": [
+          "long",
+          "int"
+        ]
+      },
+      "instant_bookable": {
+        "bsonType": "bool"
+      },
+      "last_review": {
+        "bsonType": "date"
+      },
+      "last_scraped": {
+        "bsonType": "date"
+      },
+      "latitude": {
+        "bsonType": "double"
+      },
+      "license": {
+        "bsonType": "string"
+      },
+      "listing_url": {
+        "bsonType": "string"
+      },
+      "longitude": {
+        "bsonType": "double"
+      },
+      "maximum_maximum_nights": {
+        "bsonType": "int"
+      },
+      "maximum_minimum_nights": {
+        "bsonType": "int"
+      },
+      "maximum_nights": {
+        "bsonType": "int"
+      },
+      "maximum_nights_avg_ntm": {
+        "bsonType": "double"
+      },
+      "minimum_maximum_nights": {
+        "bsonType": "int"
+      },
+      "minimum_minimum_nights": {
+        "bsonType": "int"
+      },
+      "minimum_nights": {
+        "bsonType": "int"
+      },
+      "minimum_nights_avg_ntm": {
+        "bsonType": "double"
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "neighborhood_overview": {
+        "bsonType": "string"
+      },
+      "neighbourhood": {
+        "bsonType": "string"
+      },
+      "neighbourhood_cleansed": {
+        "bsonType": "string"
+      },
+      "number_of_reviews": {
+        "bsonType": "int"
+      },
+      "number_of_reviews_l30d": {
+        "bsonType": "int"
+      },
+      "number_of_reviews_ltm": {
+        "bsonType": "int"
+      },
+      "picture_url": {
+        "bsonType": "string"
+      },
+      "price": {
+        "bsonType": "string"
+      },
+      "property_type": {
+        "bsonType": "string"
+      },
+      "review_scores_accuracy": {
+        "bsonType": "double"
+      },
+      "review_scores_checkin": {
+        "bsonType": "double"
+      },
+      "review_scores_cleanliness": {
+        "bsonType": "double"
+      },
+      "review_scores_communication": {
+        "bsonType": "double"
+      },
+      "review_scores_location": {
+        "bsonType": "double"
+      },
+      "review_scores_rating": {
+        "bsonType": "double"
+      },
+      "review_scores_value": {
+        "bsonType": "double"
+      },
+      "reviews_per_month": {
+        "bsonType": [
+          "double",
+          "int"
+        ]
+      },
+      "room_type": {
+        "bsonType": "string"
+      },
+      "scrape_id": {
+        "bsonType": "long"
+      },
+      "source": {
+        "bsonType": "string"
+      }
+    }
+  }
+}

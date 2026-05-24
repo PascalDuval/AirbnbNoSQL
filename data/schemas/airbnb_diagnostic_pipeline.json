@@ -1,0 +1,93 @@
+{
+  "version": "1.0",
+  "pipeline": [
+    {
+      "$facet": {
+        "Champs Manquants": [
+          {
+            "$match": {
+              "$or": [
+                { "name": { "$exists": false } },
+                { "room_type": { "$exists": false } },
+                { "host_id": { "$exists": false } },
+                { "neighbourhood": { "$exists": false } },
+                { "number_of_reviews": { "$exists": false } },
+                { "availability_365": { "$exists": false } },
+                { "price": { "$exists": false } }
+              ]
+            }
+          },
+          { "$count": "documents_incomplets" }
+        ],
+        "Valeurs Aberrantes": [
+          {
+            "$match": {
+              "$or": [
+                { "price": { "$lte": 0 } },
+                { "availability_365": { "$lt": 0 } },
+                { "availability_365": { "$gt": 365 } },
+                { "number_of_reviews": { "$lt": 0 } }
+              ]
+            }
+          },
+          { "$count": "valeurs_anormales" }
+        ],
+        "Type des Champs Numériques": [
+          {
+            "$project": {
+              "prix_non_num": {
+                "$cond": [{ "$not": [{ "$eq": [{ "$type": "$price" }, "double"] }] }, 1, 0]
+              },
+              "availability_non_int": {
+                "$cond": [{ "$not": [{ "$eq": [{ "$type": "$availability_365" }, "int"] }] }, 1, 0]
+              },
+              "reviews_non_int": {
+                "$cond": [{ "$not": [{ "$eq": [{ "$type": "$number_of_reviews" }, "int"] }] }, 1, 0]
+              }
+            }
+          },
+          {
+            "$group": {
+              "_id": null,
+              "prix_non_num": { "$sum": "$prix_non_num" },
+              "availability_non_int": { "$sum": "$availability_non_int" },
+              "reviews_non_int": { "$sum": "$reviews_non_int" }
+            }
+          }
+        ],
+        "Superhosts et Instant Book": [
+          {
+            "$group": {
+              "_id": null,
+              "superhosts": {
+                "$addToSet": "$host_is_superhost"
+              },
+              "instant_bookable": {
+                "$addToSet": "$instant_bookable"
+              }
+            }
+          }
+        ],
+        "Types de logement": [
+          {
+            "$group": {
+              "_id": "$room_type",
+              "count": { "$sum": 1 }
+            }
+          },
+          { "$sort": { "count": -1 } }
+        ],
+        "Par Quartier": [
+          {
+            "$group": {
+              "_id": "$neighbourhood",
+              "count": { "$sum": 1 }
+            }
+          },
+          { "$sort": { "count": -1 } },
+          { "$limit": 10 }
+        ]
+      }
+    }
+  ]
+}
